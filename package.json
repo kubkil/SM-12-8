@@ -1,0 +1,33 @@
+{
+  "name": "SM-12-8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npm-run-all -p watch:*",
+    "watch:sass": "node-sass -w --source-map true scss/ -o css/",
+    "watch:bs": "browser-sync start --server --files css/*.css *.html --browser chrome",
+    "autoprefix": "postcss css/style.css -u autoprefixer -o css/style.prefixed.css",
+    "watch:autoprefix": "onchange \"css/style.css\" -d 50 -- npm run autoprefix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubkil/SM-12-8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kubkil/SM-12-8/issues"
+  },
+  "homepage": "https://github.com/kubkil/SM-12-8#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.4.1",
+    "browser-sync": "^2.23.7",
+    "hoek": "^5.0.3",
+    "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "postcss-cli": "^5.0.0"
+  }
+}
