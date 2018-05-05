@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "npm-run-all -p watch:*",
     "watch:sass": "node-sass -w --source-map true scss/ -o css/",
-    "watch:bs": "browser-sync start --server --files css/*.css *.html --browser chrome",
+    "watch:bs": "browser-sync start --server --files css/*.css *.html",
     "autoprefix": "postcss css/style.css -u autoprefixer -o css/style.prefixed.css",
     "watch:autoprefix": "onchange \"css/style.css\" -d 50 -- npm run autoprefix"
   },
