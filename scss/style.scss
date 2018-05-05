@@ -1,0 +1,30 @@
+@import 'mixins';
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  @include respond-to(small) {
+    font-size: calc(13px + 3 * ((100vw - 320px) / 448));
+  }
+
+  @include respond-to(medium) {
+    font-size: 100%;
+  }
+}
+
+body {
+  font-family: $font-main;
+}
+
+// IMPORT
+@import 'nav';

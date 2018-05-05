@@ -1,0 +1,19 @@
+// MEDIA
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'medium-large': 896px,
+  'large': 1200px
+);
+
+@mixin respond-to($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin width-section {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
