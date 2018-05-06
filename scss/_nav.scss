@@ -45,9 +45,9 @@
 }
 // END HAMBURGER
 
-.header__list {
+.header__list,
+.header__hidden-list {
   color: #fff;
-  list-style: none;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
@@ -57,4 +57,45 @@
 .header__link {
   display: block;
   padding: 1.5%;
+}
+
+// HEADER DROPDOWNS
+.header__dropdown {
+  display: none;
+  @include respond-to(medium) {
+    display: block;;
+  }
+  @include respond-to(large) {
+    display: none;
+  }
+}
+
+#about-us-toggle,
+#services-toggle {
+  display: block;
+  &:checked ~ .header__hidden-list {
+    @media screen and (min-width: 768px) and (max-width: 1999px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 100%;
+      background-color: #000;
+    }
+  }
+  &:not(:checked) ~ .header__hidden-list {
+    // mixin respond-to uses min-width
+    @media screen and (min-width: 768px) and (max-width: 1999px) {
+      display: none;
+    }
+  }
+}
+
+// END HEADER DROPDOWNS
+
+.header__link--large {
+  display: none;
+  @include respond-to(large) {
+    display: block;
+  }
 }
