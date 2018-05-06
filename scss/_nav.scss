@@ -1,0 +1,60 @@
+.header {
+  background-color: #000;
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2% 0 2% 0;
+  position: relative;
+  @include width-section;
+}
+
+// HAMBURGER
+#menu-toggle {
+  display: none;
+  &:checked ~ .header__list {
+    // mixin respond-to uses min-width
+    @media screen and (max-width: 768px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 100%;
+      background-color: #000;
+    }
+  }
+  &:not(:checked) ~ .header__list {
+    // mixin respond-to uses min-width
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.header__toggle {
+  font-size: 2rem;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+// END HAMBURGER
+
+.header__list {
+  color: #fff;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.286;
+}
+
+.header__link {
+  display: block;
+  padding: 1.5%;
+}
