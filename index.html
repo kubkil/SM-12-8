@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/style.prefixed.css" type="text/css">
 </head>
 <body>
 
@@ -29,9 +29,7 @@
 
           <!-- DROPDOWN FROM MEDIUM TO LARGE -->
           <input type="checkbox" id="about-us-toggle">
-          <label for="about-us-toggle" class="header__toggle--about-us">
-            <a href="#" class="header__dropdown">about us &#x25BC;</a>
-          </label>
+          <label for="about-us-toggle" class="header__toggle--about-us">about us <i class="fas fa-angle-double-down"></i></label>
           <ul class="header__hidden-list">
             <li class="header__item">
               <a href="#about-us" class="header__link">about us</a>
@@ -54,9 +52,7 @@
 
           <!-- DROPDOWN FROM MEDIUM TO LARGE -->
           <input type="checkbox" id="services-toggle">
-          <label for="services-toggle" class="header__toggle--services">
-            <a href="#" class="header__dropdown">services &#x25BC;</a>
-          </label>
+          <label for="services-toggle" class="header__toggle--services">services <i class="fas fa-angle-double-down"></i></label>
           <ul class="header__hidden-list">
             <li class="header__item">
               <a href="#services" class="header__link">services</a>
@@ -71,20 +67,20 @@
           <!-- DROPDOWN END -->
 
         </li>
-        <li class="header__item">
-          <a href="#projects" class="header__link header__link--large">our projects</a>
+        <li class="header__item header__item--large">
+          <a href="#projects" class="header__link">our projects</a>
         </li>
-        <li class="header__item">
-          <a href="#team" class="header__link header__link--large">our team</a>
+        <li class="header__item header__item--large">
+          <a href="#team" class="header__link">our team</a>
         </li>
-        <li class="header__item">
-          <a href="#clients" class="header__link header__link--large">happy clients</a>
+        <li class="header__item header__item--large">
+          <a href="#clients" class="header__link">happy clients</a>
         </li>
-        <li class="header__item">
-          <a href="#price" class="header__link header__link--large">price</a>
+        <li class="header__item header__item--large">
+          <a href="#price" class="header__link">price</a>
         </li>
-        <li class="header__item">
-          <a href="#facts" class="header__link header__link--large">some facts</a>
+        <li class="header__item header__item--large">
+          <a href="#facts" class="header__link">some facts</a>
         </li>
         <li class="header__item">
           <a href="#contact" class="header__link">contact us</a>
