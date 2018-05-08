@@ -20,11 +20,14 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2% 0 2% 0;
+  padding: 2% 0;
   position: relative;
-  max-width: 1400px;
+  max-width: 87.5rem;
   width: 100%;
   margin: 0 auto; }
+  @media screen and (min-width: 768px) {
+    .header__navbar {
+      padding: 0; } }
 
 #menu-toggle {
   display: none; }
@@ -36,7 +39,7 @@ body {
       position: absolute;
       top: 100%;
       background-color: #000; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     #menu-toggle:not(:checked) ~ .header__list {
       display: none; } }
 
@@ -49,6 +52,17 @@ body {
     .header__toggle {
       display: none; } }
 
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .header__list {
+      max-width: 34.75rem; } }
+  @media screen and (min-width: 1400px) {
+    .header__list {
+      max-width: 71rem; } }
+
 .header__list,
 .header__hidden-list {
   color: #fff;
@@ -58,26 +72,45 @@ body {
   line-height: 1.286; }
 
 .header__link {
-  display: block;
-  padding: 1.5%; }
+  display: inline-block;
+  padding: 1rem; }
 
-.header__dropdown {
+.header__item {
+  position: relative;
+  height: 100%; }
+  @media screen and (min-width: 768px) {
+    .header__item {
+      padding: 1% 0; } }
+
+.header__item--large,
+.header__link--large {
+  display: none; }
+  @media screen and (min-width: 1400px) {
+    .header__item--large,
+    .header__link--large {
+      display: inline-block; } }
+
+.header__toggle--about-us,
+.header__toggle--services {
   display: none; }
   @media screen and (min-width: 768px) {
-    .header__dropdown {
-      display: block; } }
-  @media screen and (min-width: 1200px) {
-    .header__dropdown {
+    .header__toggle--about-us,
+    .header__toggle--services {
+      display: block;
+      cursor: pointer;
+      padding: 1rem; } }
+  @media screen and (min-width: 1400px) {
+    .header__toggle--about-us,
+    .header__toggle--services {
       display: none; } }
 
 #about-us-toggle,
 #services-toggle {
-  display: block; }
+  display: none; }
   @media screen and (min-width: 768px) and (max-width: 1999px) {
     #about-us-toggle:checked ~ .header__hidden-list,
     #services-toggle:checked ~ .header__hidden-list {
       display: block;
-      text-align: center;
       position: absolute;
       top: 100%;
       background-color: #000; } }
@@ -85,11 +118,5 @@ body {
     #about-us-toggle:not(:checked) ~ .header__hidden-list,
     #services-toggle:not(:checked) ~ .header__hidden-list {
       display: none; } }
-
-.header__link--large {
-  display: none; }
-  @media screen and (min-width: 1200px) {
-    .header__link--large {
-      display: block; } }
 
 /*# sourceMappingURL=style.css.map */
