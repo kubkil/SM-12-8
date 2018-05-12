@@ -75,11 +75,19 @@
 }
 
 .header__item {
-position: relative;
+  position: relative;
   height: 100%;
+  border-bottom: 5px solid transparent;
   @include respond-to(medium) {
     padding: 1% 0;
+    &:hover {
+      border-bottom-color: #b88b58;
+    }
   }
+}
+
+.header__item--hidden {
+  border: none;
 }
 
 .header__item--large,
