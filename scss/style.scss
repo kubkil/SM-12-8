@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-main;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -26,9 +34,6 @@ ul {
 //   }
 // }
 
-body {
-  font-family: $font-main;
-}
-
 // IMPORT
 @import 'nav';
+@import 'hero';
