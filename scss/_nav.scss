@@ -37,7 +37,7 @@
 }
 
 .header__toggle {
-  font-size: 2rem;
+  font-size: 32px;
   color: #fff;
   &:hover {
     cursor: pointer;
@@ -53,10 +53,10 @@
   justify-content: space-between;
   width: 100%;
   @include respond-to(medium) {
-    max-width: 34.75rem;
+    max-width: 556px;
   }
   @include respond-to(large) {
-    max-width: 71rem;
+    max-width: 1136px;
   }
 }
 
@@ -65,21 +65,25 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.286;
+  z-index: 999;
 }
 
 .header__link {
   display: inline-block;
-  padding: 1rem;
+  // padding: 1rem;
+  z-index: 999;
+  padding: 0.5rem 1rem;
 }
 
 .header__item {
   position: relative;
   height: 100%;
-  border-bottom: 5px solid transparent;
+  z-index: 999;
   @include respond-to(medium) {
-    padding: 1% 0;
+    border-bottom: 5px solid transparent;
+    padding: 1.5rem 0;
     &:hover {
       border-bottom-color: #b88b58;
     }
@@ -105,7 +109,7 @@
   @include respond-to(medium) {
     display: block;
     cursor: pointer;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
   @include respond-to(large) {
     display: none;
