@@ -8,7 +8,8 @@
   align-items: center;
   padding: 2% 0;
   position: relative;
-  @include width-section;
+  white-space: nowrap;
+  @include section-width;
   @include respond-to(medium) {
     padding: 0;
   }
@@ -72,7 +73,6 @@
 
 .header__link {
   display: inline-block;
-  // padding: 1rem;
   z-index: 999;
   padding: 0.5rem 1rem;
 }
@@ -85,7 +85,7 @@
     border-bottom: 5px solid transparent;
     padding: 1.5rem 0;
     &:hover {
-      border-bottom-color: #b88b58;
+      border-bottom-color: $color-btns-icons-efects;
     }
   }
 }
@@ -120,7 +120,7 @@
 #services-toggle {
   display: none;
   &:checked ~ .header__hidden-list {
-    @media screen and (min-width: 768px) and (max-width: 1999px) {
+    @include respond-to(medium) {
       display: block;
       position: absolute;
       top: 100%;
@@ -128,8 +128,7 @@
     }
   }
   &:not(:checked) ~ .header__hidden-list {
-    // mixin respond-to uses min-width
-    @media screen and (min-width: 768px) and (max-width: 1999px) {
+    @include respond-to(medium) {
       display: none;
     }
   }
