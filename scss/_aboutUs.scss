@@ -1,6 +1,6 @@
 .about-us {
   @include section-width;
-  padding: 3% 6%;
+  @include section-paddings;
 }
 
 .about-us__heading {
@@ -9,8 +9,6 @@
 
 .about-us__heading-secondary {
   @include section-heading-secondary;
-  color: $color-secondary-heading;
-  margin: 1% 0 2% 0;
 }
 
 .about-us__flex {
