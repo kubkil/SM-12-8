@@ -18,6 +18,12 @@ $breakpoints: (
   margin: 0 auto;
 }
 
+@mixin section-paddings {
+  padding: 3rem;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
 @mixin section-heading {
   text-transform: uppercase;
   text-align: center;
@@ -26,10 +32,12 @@ $breakpoints: (
 }
 
 @mixin section-heading-secondary {
+  margin: 1% 0 2% 0;
   text-transform: uppercase;
   text-align: center;
   font-size: 14px;
   font-weight: 700;
+  color: $color-heading-secondary;
 }
 
 @mixin main-btn {
