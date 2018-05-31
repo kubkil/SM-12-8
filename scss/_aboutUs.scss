@@ -25,7 +25,6 @@
   text-align: center;
   @include respond-to(medium) {
     margin-right: 5%;
-    text-align: left;
   }
 }
 
@@ -34,6 +33,7 @@
   font-size: 14px;
   line-height: 1.786;
   margin-bottom: 2%;
+  text-align: left;
 }
 
 .about-us__btn {
