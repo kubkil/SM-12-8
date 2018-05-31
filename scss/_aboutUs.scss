@@ -1,0 +1,68 @@
+.about-us {
+  @include section-width;
+  padding: 3% 6%;
+}
+
+.about-us__heading {
+  @include section-heading;
+}
+
+.about-us__heading-secondary {
+  @include section-heading-secondary;
+  color: $color-secondary-heading;
+  margin: 1% 0 2% 0;
+}
+
+.about-us__flex {
+  display: flex;
+  flex-direction: column;
+  @include respond-to(medium) {
+    flex-direction: row;
+  }
+}
+
+.about-us__text {
+  text-align: center;
+  @include respond-to(medium) {
+    margin-right: 5%;
+    text-align: left;
+  }
+}
+
+.about-us__story {
+  color: $color-less-black;
+  font-size: 14px;
+  line-height: 1.786;
+  margin-bottom: 2%;
+}
+
+.about-us__btn {
+  margin-bottom: 5%;
+  @include main-btn;
+}
+
+.about-us__youtube {
+  @media screen and (min-width: 768px) and (max-width: 896px) {
+    width: 45vw;
+    height: 30vh;
+  }
+}
+
+.about-us__responsive-video {
+  @media screen and (max-width: 768px) {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.about-us__youtube {
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
