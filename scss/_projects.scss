@@ -1,0 +1,127 @@
+.projects {
+  background-color: $color-less-white-background;
+}
+
+.projects__width {
+  @include section-width;
+  @include section-paddings;
+}
+
+.projects__heading {
+  @include section-heading;
+}
+
+.projects__heading-secondary {
+  @include section-heading-secondary;
+}
+
+.projects__center {
+  display: flex;
+  justify-content: center;
+}
+
+.projects__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid #cfcfcf;
+  border-radius: 30px;
+  background-color: #ededed;
+  margin-bottom: 2rem;
+  @include respond-to(medium) {
+    padding: 0.1rem 2.5rem;
+  }
+}
+
+.projects__list-item {
+  padding: 2% 0;
+  @include respond-to(medium) {
+    border-left: 0.5px solid #cfcfcf;
+    border-right: 0.5px solid #cfcfcf;
+  }
+}
+
+.projects__list-item--no-border-right {
+  border-right: none;
+}
+
+.projects__list-item--no-border-left {
+  border-left: none;
+}
+
+.projects__item-link {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.286;
+  // padding lft rght in px because % and rem results in whitespace between borders
+  padding: 10px 19px;
+  margin: 0.9rem 5px;
+  @include respond-to(medium) {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    &:hover {
+      border-bottom-color: #b88b58;
+    }
+  }
+}
+
+// GALLERY
+
+.projects__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include respond-to(medium) {
+    justify-content: space-around;
+  }
+  @include respond-to(large) {
+    justify-content: space-between;
+  }
+}
+
+.projects__wrapper-for-overlay {
+  position: relative;
+  margin: 0 0.5rem 1.5rem 0.5rem;
+}
+
+.projects__photo-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.projects__photo {
+  opacity: 1;
+  display: block;
+}
+
+.projects__wrapper-for-overlay:hover .projects__photo-overlay {
+  opacity: 1;
+}
+
+.projects__overlay-heading {
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.projects__overlay-para {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.projects__btn {
+  @include main-btn;
+  margin-top: 1rem;
+}
