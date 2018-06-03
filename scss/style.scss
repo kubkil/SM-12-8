@@ -21,7 +21,8 @@ html {
 body {
   font-family: $font-main;
   // do weryfikacji
-  // max-width: 1920px;
+  max-width: 1920px;
+  width: 100%;
 }
 
 a {
@@ -38,3 +39,4 @@ ul {
 @import 'hero';
 @import 'aboutUs';
 @import 'services';
+@import 'projects';

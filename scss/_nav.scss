@@ -50,15 +50,8 @@
 // END HAMBURGER
 
 .header__list {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
-  width: 100%;
-  @include respond-to(medium) {
-    max-width: 556px;
-  }
-  @include respond-to(large) {
-    max-width: 1136px;
-  }
 }
 
 .header__list,

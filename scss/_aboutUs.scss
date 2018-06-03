@@ -1,4 +1,8 @@
 .about-us {
+  background-color: $color-less-white-background;
+}
+
+.about-us__width {
   @include section-width;
   @include section-paddings;
 }
@@ -22,6 +26,7 @@
 .about-us__text {
   text-align: center;
   @include respond-to(medium) {
+    text-align: left;
     margin-right: 5%;
   }
 }
@@ -30,13 +35,13 @@
   color: $color-less-black;
   font-size: 14px;
   line-height: 1.786;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
   text-align: left;
 }
 
 .about-us__btn {
-  margin-bottom: 5%;
   @include main-btn;
+  margin-bottom: 5%;
 }
 
 .about-us__youtube {
