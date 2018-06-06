@@ -54,12 +54,7 @@
 }
 
 .hero__slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: transform 1600ms;
+  @include carousel-slide;
 }
 
 .hero__slide--1 {
@@ -86,24 +81,16 @@
   left: 200%;
 }
 
+.hero__radio {
+  display: none;
+}
+
 .hero__pagination {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  left: 0;
-  text-align: center;
-  z-index: 998;
+  @include carousel-pagination;
 }
 
 .hero__label {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  display: inline-block;
-  background: transparent;
-  margin: 0 2px;
-  border: solid 2px $color-btns-icons-efects;
-  cursor: pointer;
+  @include carousel-label;
 }
 
 #hero__radio--1:checked ~ .hero__pagination .hero__label--1,
