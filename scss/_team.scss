@@ -1,0 +1,131 @@
+.team {
+  padding-bottom: 75vh;
+  position: relative;
+  overflow: hidden;
+  background: url(/images/team/Bg_image-sml.jpg) center/cover no-repeat;
+  @include respond-to(medium) {
+    background: url(/images/team/Bg_image.jpg) center/cover no-repeat;
+  }
+}
+
+.team__heading {
+  @include section-heading;
+  color: #fff;
+  margin-top: 3rem;
+}
+
+.team__heading-secondary {
+  @include section-heading-secondary;
+}
+
+.team__co-workers {
+  @include section-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6%;
+  @include respond-to(medium) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.team__worker-card {
+  background-color: #fff;
+  text-align: center;
+  padding: 0 3.6%;
+  margin-bottom: 2rem;
+}
+
+.team__worker-photo {
+  margin-top: 3rem;
+  margin-bottom: 2.5625rem;
+}
+
+.team__worker-name {
+  font-size: 1.3rem;
+  color: $color-less-black;
+  text-transform: uppercase;
+}
+
+.team__worker-job {
+  font-size: 14px;
+  color: $color-less-black;
+  line-height: 1.714;
+  margin-bottom: 2.25rem;
+}
+
+.team__social-link {
+  border-radius: 50%;
+  background-color: $color-icons-background;
+  width: 33px;
+  height: 33px;
+  display: inline-flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 2.6875rem;
+  @include respond-to(medium) {
+    &:hover {
+      background-color: #b88b58;
+   }
+  }
+}
+
+// CAROUSEL
+
+.team__carousel {
+  overflow: hidden;
+}
+
+.team__slide {
+  @include carousel-slide;
+}
+
+.team__slide--1 {
+  left: 0;
+}
+
+.team__slide--2 {
+  left: 100%;
+}
+
+.team__slide--3 {
+  left: 200%;
+}
+
+.team__radio {
+  display: none;
+}
+
+.team__pagination {
+  @include carousel-pagination;
+}
+
+.team__label {
+  @include carousel-label;
+}
+
+#team__radio--1:checked ~ .team__pagination .team__label--1,
+#team__radio--2:checked ~ .team__pagination .team__label--2,
+#team__radio--3:checked ~ .team__pagination .team__label--3 {
+  background: $color-btns-icons-efects;
+}
+
+#team__radio--1:checked ~ .team__slide {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+#team__radio--2:checked ~ .team__slide {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+#team__radio--3:checked ~ .team__slide {
+  -webkit-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
+
+/*
+carousel idea by Oleksandr Zinchenko https://codepen.io/Qvatra/
+*/
