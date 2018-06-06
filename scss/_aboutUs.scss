@@ -53,7 +53,7 @@
 }
 
 .about-us__responsive-video {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -62,7 +62,7 @@
 }
 
 .about-us__youtube {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
