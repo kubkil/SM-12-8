@@ -1,6 +1,5 @@
 .clients {
   padding: 3rem 0;
-  position: relative;
   text-align: center;
   background-color: $color-less-white-background;
 }
@@ -39,10 +38,25 @@
   margin: 1rem 0 2.5rem 0;
 }
 
+.clients__logos {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 2rem;
+  flex-wrap: wrap;
+}
+
+.clients__logo {
+  margin: 1rem 0;
+}
+
 // CAROUSEL
 
 .clients__carousel {
   @include carousel;
+  position: relative;
+  padding-bottom: 2rem;
 }
 
 .clients__slide {
