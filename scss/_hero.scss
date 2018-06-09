@@ -1,20 +1,11 @@
 .hero {
-  // DO POPRAWY
-  padding-bottom: 80%;
-  @media screen and (orientation: landscape) {
-    padding-bottom: 65%;
-  }
   text-align: center;
   text-transform: uppercase;
   position: relative;
-  overflow: hidden;
-  @include respond-to(medium-large) {
-    padding-bottom: 70vh;
-  }
 }
 
 .hero__heading {
-  margin-top: 13%;
+  margin-top: 14%;
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 0.958;
@@ -46,39 +37,23 @@
 
 .hero__btn {
   @include main-btn;
+  margin-bottom: 6rem;
 }
 
 // CAROUSEL
 .hero__carousel {
-  overflow: hidden;
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .hero__slide {
-  @include carousel-slide;
-}
-
-.hero__slide--1 {
+  flex: 1 0 100%;
+  transition: transform 1600ms;
   background: url(/images/hero/hero-bcg-small.jpg) center/cover no-repeat;
   @include respond-to(medium) {
     background: url(/images/hero/hero-bcg.jpg) center/cover no-repeat;
   }
-  left: 0;
-}
-
-.hero__slide--2 {
-  background: url(/images/hero/hero-bcg-small.jpg) center/cover no-repeat;
-  @include respond-to(medium) {
-    background: url(/images/hero/hero-bcg.jpg) center/cover no-repeat;
-  }
-  left: 100%;
-}
-
-.hero__slide--3 {
-  background: url(/images/hero/hero-bcg-small.jpg) center/cover no-repeat;
-  @include respond-to(medium) {
-    background: url(/images/hero/hero-bcg.jpg) center/cover no-repeat;
-  }
-  left: 200%;
 }
 
 .hero__radio {
@@ -111,7 +86,3 @@
   -webkit-transform: translateX(-200%);
   transform: translateX(-200%);
 }
-
-/*
-carousel idea by Oleksandr Zinchenko https://codepen.io/Qvatra/
-*/
