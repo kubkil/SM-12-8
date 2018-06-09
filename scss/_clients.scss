@@ -1,0 +1,84 @@
+.clients {
+  padding: 3rem 0;
+  position: relative;
+  text-align: center;
+  background-color: $color-less-white-background;
+}
+
+.clients__heading {
+  @include section-heading;
+}
+
+.clients__heading-secondary {
+  @include section-heading-secondary;
+}
+
+.clients__photo {
+  border-radius: 50%;
+  margin: 2.5% 0 1.5% 0;
+}
+
+.clients__client-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5%;
+}
+
+.clients__client-job {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.clients__recomendation {
+  font-size: 14px;
+  color: $color-para-non-white-background;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 5%;
+  margin: 1rem 0 2.5rem 0;
+}
+
+// CAROUSEL
+
+.clients__carousel {
+  @include carousel;
+}
+
+.clients__slide {
+  @include carousel-slide;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clients__radio {
+  display: none;
+}
+
+.clients__pagination {
+  @include carousel-pagination;
+}
+
+.clients__label {
+  @include carousel-label;
+}
+
+#clients__radio--1:checked ~ .clients__pagination .clients__label--1,
+#clients__radio--2:checked ~ .clients__pagination .clients__label--2,
+#clients__radio--3:checked ~ .clients__pagination .clients__label--3 {
+  background: $color-btns-icons-efects;
+}
+
+#clients__radio--1:checked ~ .clients__slide {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+#clients__radio--2:checked ~ .clients__slide {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+#clients__radio--3:checked ~ .clients__slide {
+  -webkit-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
