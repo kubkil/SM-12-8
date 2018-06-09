@@ -64,7 +64,7 @@ $breakpoints: (
 
 @mixin carousel-slide {
   flex: 1 0 100%;
-  transition: transform 1600ms;
+  transition: transform 1400ms;
 }
 
 @mixin carousel-pagination {
