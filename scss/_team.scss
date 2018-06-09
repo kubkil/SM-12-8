@@ -1,7 +1,6 @@
 .team {
-  padding-bottom: 75vh;
+  padding: 3rem 0;
   position: relative;
-  overflow: hidden;
   background: url(/images/team/Bg_image-sml.jpg) center/cover no-repeat;
   @include respond-to(medium) {
     background: url(/images/team/Bg_image.jpg) center/cover no-repeat;
@@ -11,7 +10,6 @@
 .team__heading {
   @include section-heading;
   color: #fff;
-  margin-top: 3rem;
 }
 
 .team__heading-secondary {
@@ -75,25 +73,12 @@
 }
 
 // CAROUSEL
-
 .team__carousel {
-  overflow: hidden;
+  @include carousel;
 }
 
 .team__slide {
   @include carousel-slide;
-}
-
-.team__slide--1 {
-  left: 0;
-}
-
-.team__slide--2 {
-  left: 100%;
-}
-
-.team__slide--3 {
-  left: 200%;
 }
 
 .team__radio {
@@ -126,7 +111,3 @@
   -webkit-transform: translateX(-200%);
   transform: translateX(-200%);
 }
-
-/*
-carousel idea by Oleksandr Zinchenko https://codepen.io/Qvatra/
-*/
