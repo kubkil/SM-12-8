@@ -2,7 +2,7 @@
   background-color: #000;
 }
 
-.services__width {
+.services__wrapper {
   @include section-width;
   @include section-paddings;
 }

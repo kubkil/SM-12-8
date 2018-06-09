@@ -2,7 +2,7 @@
   background-color: $color-less-white-background;
 }
 
-.projects__width {
+.projects__wrapper {
   @include section-width;
   @include section-paddings;
 }
