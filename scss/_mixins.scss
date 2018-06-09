@@ -56,18 +56,20 @@ $breakpoints: (
 
 // CAROUSEL
 
-@mixin carousel-slide {
+@mixin carousel {
+  display: flex;
   width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+  overflow-x: hidden;
+}
+
+@mixin carousel-slide {
+  flex: 1 0 100%;
   transition: transform 1600ms;
 }
 
 @mixin carousel-pagination {
   position: absolute;
-  bottom: 20px;
+  bottom: 2rem;
   width: 100%;
   left: 0;
   text-align: center;
