@@ -12,6 +12,7 @@
 }
 
 .prices__table {
+  @include section-width;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
