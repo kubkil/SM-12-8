@@ -11,7 +11,7 @@
   @include section-heading-secondary;
 }
 
-.prices__table {
+.prices__wrapper {
   @include section-width;
   display: flex;
   justify-content: space-around;
