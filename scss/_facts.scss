@@ -22,9 +22,9 @@
 
 .facts__fact {
   text-align: center;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
 }
 
 .facts__number {
@@ -49,12 +49,13 @@
   font-size: 1.25rem;
   color: #fff;
   margin-bottom: 1rem;
+  @media screen and (min-width: 400px) and (orientation: landscape) {
+    height: 3rem;
+  }
 }
 
 .facts__desc {
   font-size: 14px;
   color: $color-para-non-white-background;
   margin-bottom: 1rem;
-  display: inline-block;
-  vertical-align: bottom;;
 }
