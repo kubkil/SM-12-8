@@ -1,6 +1,9 @@
 .contact {
   @include section-paddings;
   background-color: $color-less-white-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact__heading {
@@ -14,9 +17,9 @@
 .contact__form {
   display: inline-flex;
   flex-direction: column;
-  max-width: 540px;
+  max-width: 600px;
   width: 100%;
-  margin: 0 auto;
+  margin-top: 3rem;
 }
 
 .contact__fieldset-name-email {
@@ -75,4 +78,12 @@
   &::placeholder {
     line-height: 500%;
   }
+}
+
+.contact__btn-wrapper {
+  text-align: center;
+}
+
+.contact__btn {
+  @include main-btn;
 }
