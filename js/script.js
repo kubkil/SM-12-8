@@ -167,6 +167,44 @@ function initMap() {
     ]
     });
 
+  const contactInfo =
+    '<address class="map__contact" id="address-box">' +
+      '<div class="map__info-wrapper">' +
+        '<span class="map__icon-wrapper">' +
+          '<img src="images/map/postal_icon.png" alt="envelope icon" class="map__info-icon">' +
+        '</span>' +
+        '<p class="map__info">PO Box 16122 Collins Street West Victoria 8007 Australia</p>' +
+      '</div>' +
+      {/* <div class="map__info-wrapper">
+        <span class="map__icon-wrapper">
+          <img src="images/map/place_icon.png" alt="location marker icon" class="map__info-icon">
+        </span>
+          <p class="map__info">121 King Street Melbourne Victoria 3000 Australia</p>
+      </div>
+        <div class="map__info-wrapper">
+          <span class="map__icon-wrapper">
+            <img src="images/map/cellphone_icon.png" alt="telephone icon" class="map__info-icon">
+        </span>
+            <p class="map__info">+00 0 1234 5678</p>
+      </div>
+          <div class="map__info-wrapper">
+            <span class="map__icon-wrapper">
+              <img src="images/map/@_icon.png" alt="email icon" class="map__info-icon">
+        </span>
+              <p class="map__info">bukindesing@gmail.com</p>
+      </div>
+            <div class="map__info-wrapper">
+              <span class="map__icon-wrapper">
+                <img src="images/map/web_icon.png" alt="globe icon" class="map__info-icon">
+        </span>
+                <a href="http://www.envato.com" class="map__info">www.envato.com</a> */}
+      {/* </div> */}
+    '</address>';
+
+  const infoWindow = new google.maps.InfoWindow({
+    content: contactInfo
+  });
+
   const marker = new google.maps.Marker({
     position: awaxLatLng,
     map: map,
@@ -176,4 +214,25 @@ function initMap() {
       scaledSize: new google.maps.Size(50, 50)
     }
   });
+
+  marker.addListener('click', function openWidow() {
+    infoWindow.open(map, marker);
+
+    const addressElem = document.getElementById('address-box');
+    addressElem.classList.add('opened');
+  });
+
+  const addressElem = document.getElementById('address-box');
+
+  if (addressElem.classList.contains('opened')) {
+      marker.addListener('click', function closeWidow() {
+      infoWindow.close();
+      addressElem.classList.remove('opened');
+    });
+  }
+
+  // marker.addListener('click', function closeWidow() {
+  //   if ()
+  //   infoWindow.open(map, marker);
+  // });
 }
