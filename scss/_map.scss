@@ -7,14 +7,17 @@
 .map__contact {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  padding-bottom: 1rem;
+  // padding: 1.5rem;
+  // padding-bottom: 0.5rem;
   font-style: normal;
 }
 
 .map__info-wrapper {
   display: inline-flex;
   margin-bottom: 1rem;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .map__info {
@@ -29,7 +32,7 @@
   background-color: $color-heading-secondary;
   border-radius: 50%;
   display: inline-flex;
-  justify-content: center;;
+  justify-content: center;
 }
 
 .map__info-icon {
@@ -39,4 +42,5 @@
 .map__info {
   align-self: center;
   margin-left: 1rem;
+  font-family: $font-main;
 }
