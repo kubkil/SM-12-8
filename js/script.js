@@ -1,5 +1,4 @@
 function initMap() {
-
   const awaxLatLng = { lat: -37.81725, lng: 144.95577 };
 
   const map = new google.maps.Map(document.getElementById('map'), {
@@ -168,7 +167,7 @@ function initMap() {
     });
 
   const contactInfo =
-    '<address class="map__contact" id="address-box">' +
+    '<address class="map__contact map__contact--infoWindow">' +
       '<div class="map__info-wrapper">' +
         '<span class="map__icon-wrapper">' +
           '<img src="images/map/postal_icon.png" alt="envelope icon" class="map__info-icon">' +
@@ -201,11 +200,6 @@ function initMap() {
       '</div>' +
     '</address>';
 
-  const infoWindow = new google.maps.InfoWindow({
-    content: contactInfo,
-    pixelOffset: new google.maps.Size(-270, 180)
-  });
-
   const marker = new google.maps.Marker({
     position: awaxLatLng,
     map: map,
@@ -216,7 +210,48 @@ function initMap() {
     }
   });
 
-  marker.addListener('click', function openWidow() {
-    infoWindow.open(map, marker);
-  });
+  const media = window.matchMedia("(min-width: 896px)");
+
+  function showInfoWindow(media) {
+    let infoWindow;
+    if (media.matches) {
+      infoWindow = new google.maps.InfoWindow({
+        content: contactInfo,
+        pixelOffset: new google.maps.Size(-270, 180),
+        maxWidth: 400
+      });
+
+      let isInfoOpened = false;
+
+      marker.addListener('click', function openWidow() {
+        if (isInfoOpened) {
+          isInfoOpened = false;
+          infoWindow.close();
+        } else {
+          isInfoOpened = true;
+          infoWindow.open(map, marker);
+        }
+      });
+    }
+  }
+
+  media.addListener(showInfoWindow);
+
+  // const infoWindow = new google.maps.InfoWindow({
+  //   content: contactInfo,
+  //   pixelOffset: new google.maps.Size(-270, 180),
+  //   maxWidth: 400
+  // });
+
+  // let isInfoOpened = false;
+
+  // marker.addListener('click', function openWidow() {
+  //   if (isInfoOpened) {
+  //     isInfoOpened = false;
+  //     infoWindow.close();
+  //   } else {
+  //     isInfoOpened = true;
+  //     infoWindow.open(map, marker);
+  //   }
+  // });
 }
