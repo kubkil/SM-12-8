@@ -210,20 +210,19 @@ function initMap() {
     }
   });
 
-  const media = window.matchMedia("(min-width: 896px)");
+  const infoWindow = new google.maps.InfoWindow({
+    content: contactInfo,
+    pixelOffset: new google.maps.Size(-270, 180),
+    maxWidth: 400
+  });
 
-  function showInfoWindow(media) {
-    let infoWindow;
-    if (media.matches) {
-      infoWindow = new google.maps.InfoWindow({
-        content: contactInfo,
-        pixelOffset: new google.maps.Size(-270, 180),
-        maxWidth: 400
-      });
+  const mediaQuery = window.matchMedia("(min-width: 896px)");
 
-      let isInfoOpened = false;
-
-      marker.addListener('click', function openWidow() {
+  function handleWidthChange(mediaQuery) {
+    let isInfoOpened = false;
+    let markerListener;
+    if (mediaQuery.matches) {
+      markerListener = marker.addListener('click', function openWidow() {
         if (isInfoOpened) {
           isInfoOpened = false;
           infoWindow.close();
@@ -232,26 +231,13 @@ function initMap() {
           infoWindow.open(map, marker);
         }
       });
+    } else {
+      google.maps.event.removeListener(markerListener);
     }
   }
 
-  media.addListener(showInfoWindow);
+  handleWidthChange(mediaQuery);
+  // mediaQuery trafia jako argument do handleWidthChange?
+  mediaQuery.addListener(handleWidthChange);
 
-  // const infoWindow = new google.maps.InfoWindow({
-  //   content: contactInfo,
-  //   pixelOffset: new google.maps.Size(-270, 180),
-  //   maxWidth: 400
-  // });
-
-  // let isInfoOpened = false;
-
-  // marker.addListener('click', function openWidow() {
-  //   if (isInfoOpened) {
-  //     isInfoOpened = false;
-  //     infoWindow.close();
-  //   } else {
-  //     isInfoOpened = true;
-  //     infoWindow.open(map, marker);
-  //   }
-  // });
 }
