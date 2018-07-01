@@ -216,28 +216,45 @@ function initMap() {
     maxWidth: 400
   });
 
-  const mediaQuery = window.matchMedia("(min-width: 896px)");
+  let isInfoOpened = false;
+  let markerListener;
 
-  function handleWidthChange(mediaQuery) {
-    let isInfoOpened = false;
-    let markerListener;
-    if (mediaQuery.matches) {
-      markerListener = marker.addListener('click', function openWidow() {
-        if (isInfoOpened) {
-          isInfoOpened = false;
-          infoWindow.close();
-        } else {
-          isInfoOpened = true;
-          infoWindow.open(map, marker);
-        }
-      });
-    } else {
-      google.maps.event.removeListener(markerListener);
-    }
+  if (window.screen.width >= 896) {
+    markerListener = marker.addListener('click', function openWidow() {
+      if (isInfoOpened) {
+        isInfoOpened = false;
+        infoWindow.close();
+      } else {
+        isInfoOpened = true;
+        infoWindow.open(map, marker);
+      }
+    });
+  } else {
+    google.maps.event.removeListener(markerListener);
   }
 
-  handleWidthChange(mediaQuery);
-  // mediaQuery trafia jako argument do handleWidthChange?
-  mediaQuery.addListener(handleWidthChange);
+  // const mediaQuery = window.matchMedia("(min-width: 896px)");
+
+  // function handleWidthChange(mediaQuery) {
+  //   let isInfoOpened = false;
+  //   let markerListener;
+  //   if (mediaQuery.matches) {
+  //     markerListener = marker.addListener('click', function openWidow() {
+  //       if (isInfoOpened) {
+  //         isInfoOpened = false;
+  //         infoWindow.close();
+  //       } else {
+  //         isInfoOpened = true;
+  //         infoWindow.open(map, marker);
+  //       }
+  //     });
+  //   } else {
+  //     google.maps.event.removeListener(markerListener);
+  //   }
+  // }
+
+  // handleWidthChange(mediaQuery);
+  // // mediaQuery trafia jako argument do handleWidthChange?
+  // mediaQuery.addListener(handleWidthChange);
 
 }
