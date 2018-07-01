@@ -7,9 +7,19 @@
 .map__contact {
   display: flex;
   flex-direction: column;
-  // padding: 1.5rem;
-  // padding-bottom: 0.5rem;
+  padding: 2rem 1.5rem 3.5rem 1.5rem;
   font-style: normal;
+  @include respond-to(medium-large) {
+    display: none;
+  }
+}
+
+.map__contact--infoWindow {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 3.5rem 1.5rem;
+  font-style: normal;
+  padding: 0;
 }
 
 .map__info-wrapper {
