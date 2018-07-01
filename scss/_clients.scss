@@ -40,6 +40,11 @@
 
 .clients__logos {
   background-color: #fff;
+}
+
+.clients__logos-wrapper {
+  @include section-width;
+  background-color: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -48,7 +53,7 @@
 }
 
 .clients__logo {
-  margin: 1rem 0;
+  margin: 1rem;
 }
 
 // CAROUSEL
