@@ -236,28 +236,25 @@ function initMap() {
     google.maps.event.removeListener(markerListener);
   }
 
-  // const mediaQuery = window.matchMedia("(min-width: 896px)");
+  const mediaQuery = window.matchMedia("(min-width: 896px)");
 
-  // function handleWidthChange(mediaQuery) {
-  //   let isInfoOpened = false;
-  //   let markerListener;
-  //   if (mediaQuery.matches) {
-  //     markerListener = marker.addListener('click', function openWidow() {
-  //       if (isInfoOpened) {
-  //         isInfoOpened = false;
-  //         infoWindow.close();
-  //       } else {
-  //         isInfoOpened = true;
-  //         infoWindow.open(map, marker);
-  //       }
-  //     });
-  //   } else {
-  //     google.maps.event.removeListener(markerListener);
-  //   }
-  // }
+  function handleWidthChange(mediaQuery) {
+    let markerListener;
+    if (mediaQuery.matches) {
+      markerListener = marker.addListener('click', function openWidow() {
+        if (isInfoOpened) {
+          isInfoOpened = false;
+          infoWindow.close();
+        } else {
+          isInfoOpened = true;
+          infoWindow.open(map, marker);
+        }
+      });
+    } else {
+      google.maps.event.removeListener(markerListener);
+    }
+  }
 
-  // handleWidthChange(mediaQuery);
-  // // mediaQuery trafia jako argument do handleWidthChange?
-  // mediaQuery.addListener(handleWidthChange);
+  mediaQuery.addListener(handleWidthChange);
 
 }
