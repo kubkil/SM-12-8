@@ -47,9 +47,9 @@
 
 .hero__slide {
   @include carousel-slide;
-  background: url(/images/hero/hero-bcg-small.jpg) center/cover no-repeat;
+  background: url('/images/hero/hero-bcg-small.jpg') center/cover no-repeat;
   @include respond-to(medium) {
-    background: url(/images/hero/hero-bcg.jpg) center/cover no-repeat;
+    background: url('/images/hero/hero-bcg.jpg') center/cover no-repeat;
   }
 }
 
