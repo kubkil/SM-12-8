@@ -163,7 +163,9 @@ function initMap() {
         ]
       }
     ]
-    });
+  };
+
+  const map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   const contactInfo =
     `<address class="map__contact map__contact--infoWindow">
