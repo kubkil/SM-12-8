@@ -217,6 +217,7 @@ function initMap() {
     pixelOffset: new google.maps.Size(-270, 180),
     maxWidth: 400
   };
+  const infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 
   let isInfoOpened = false;
   let markerListener;
