@@ -1,7 +1,6 @@
 function initMap() {
   const awaxLatLng = { lat: -37.81725, lng: 144.95577 };
-
-  const map = new google.maps.Map(document.getElementById('map'), {
+  const mapOptions = {
     zoom: 16,
     center: awaxLatLng,
     styles: [
