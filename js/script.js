@@ -212,11 +212,11 @@ function initMap() {
   };
   const marker = new google.maps.Marker(markerOptions);
 
-  const infoWindow = new google.maps.InfoWindow({
+  const infoWindowOptions = {
     content: contactInfo,
     pixelOffset: new google.maps.Size(-270, 180),
     maxWidth: 400
-  });
+  };
 
   let isInfoOpened = false;
   let markerListener;
