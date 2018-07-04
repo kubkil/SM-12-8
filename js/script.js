@@ -201,7 +201,7 @@ function initMap() {
       </div>
     </address>`;
 
-  const marker = new google.maps.Marker({
+  const markerOptions = {
     position: awaxLatLng,
     map: map,
     title: 'Awax',
@@ -209,7 +209,8 @@ function initMap() {
       url: '/images/map/location-pin.svg',
       scaledSize: new google.maps.Size(50, 50)
     }
-  });
+  };
+  const marker = new google.maps.Marker(markerOptions);
 
   const infoWindow = new google.maps.InfoWindow({
     content: contactInfo,
