@@ -236,7 +236,7 @@ function initMap() {
     google.maps.event.removeListener(markerListener);
   }
 
-  const mediaQuery = window.matchMedia("(min-width: 896px)");
+  const mediaQuery = window.matchMedia('(min-width: 896px)');
 
   function handleWidthChange(mediaQuery) {
     let markerListener;
