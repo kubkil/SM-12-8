@@ -54,3 +54,10 @@
   margin-left: 1rem;
   font-family: $font-main;
 }
+
+// REMOVE ARROW FROM INFOWINDOW
+#map > div > div > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(2),
+#map > div > div > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(1),
+#map > div > div > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(1) {
+  display: none;
+}
