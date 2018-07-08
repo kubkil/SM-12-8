@@ -27,6 +27,8 @@
   "homepage": "https://github.com/kubkil/SM-12-8#readme",
   "devDependencies": {
     "autoprefixer": "^8.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.4",
     "hoek": "^5.0.3",
     "ngrok": "^3.0.1",
