@@ -1,3 +1,4 @@
+// GOOGLE MAPS SCRIPT
 function initMap() {
   const awaxLatLng = { lat: -37.81725, lng: 144.95577 };
   const mapOptions = {
@@ -222,39 +223,58 @@ function initMap() {
   let isInfoOpened = false;
   let markerListener;
 
-  if (window.screen.width >= 896) {
-    markerListener = marker.addListener('click', function openWidow() {
-      if (isInfoOpened) {
-        isInfoOpened = false;
-        infoWindow.close();
-      } else {
-        isInfoOpened = true;
-        infoWindow.open(map, marker);
-      }
-    });
-  } else {
-    google.maps.event.removeListener(markerListener);
-  }
-
-  const mediaQuery = window.matchMedia('(min-width: 896px)');
-
-  function handleWidthChange(mediaQuery) {
-    let markerListener;
+  const handleScreenWidthChange = function (mediaQuery) {
     if (mediaQuery.matches) {
       markerListener = marker.addListener('click', function openWidow() {
         if (isInfoOpened) {
-          isInfoOpened = false;
           infoWindow.close();
-        } else {
-          isInfoOpened = true;
+          isInfoOpened = false;
+        }
+        else {
           infoWindow.open(map, marker);
+          isInfoOpened = true;
         }
       });
-    } else {
-      google.maps.event.removeListener(markerListener);
     }
   }
+  const screenWidth = window.matchMedia('all and (min-width: 896px)');
 
-  mediaQuery.addListener(handleWidthChange);
+  handleScreenWidthChange(screenWidth);
+  screenWidth.addListener(handleScreenWidthChange);
+
+  // if (window.screen.width >= 896) {
+  //   markerListener = marker.addListener('click', function openWidow() {
+  //     if (isInfoOpened) {
+  //       isInfoOpened = false;
+  //       infoWindow.close();
+  //     } else {
+  //       isInfoOpened = true;
+  //       infoWindow.open(map, marker);
+  //     }
+  //   });
+  // } else {
+  //   google.maps.event.removeListener(markerListener);
+  // }
+
+  // const mediaQuery = window.matchMedia('(min-width: 896px)');
+
+  // function handleWidthChange(mediaQuery) {
+  //   let markerListener;
+  //   if (mediaQuery.matches) {
+  //     markerListener = marker.addListener('click', function openWidow() {
+  //       if (isInfoOpened) {
+  //         isInfoOpened = false;
+  //         infoWindow.close();
+  //       } else {
+  //         isInfoOpened = true;
+  //         infoWindow.open(map, marker);
+  //       }
+  //     });
+  //   } else {
+  //     google.maps.event.removeListener(markerListener);
+  //   }
+  // }
+
+  // mediaQuery.addListener(handleWidthChange);
 
 }
