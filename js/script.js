@@ -207,7 +207,7 @@ function initMap() {
     map: map,
     title: 'Awax',
     icon: {
-      url: '/images/map/location-pin.svg',
+      url: '../images/map/location-pin.svg',
       scaledSize: new google.maps.Size(50, 50)
     }
   };
