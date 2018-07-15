@@ -1,0 +1,88 @@
+// MEDIA
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'medium-large': 896px,
+  'large': 1400px
+);
+
+@mixin respond-to($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin section-width {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin section-paddings {
+  padding: 3rem;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+@mixin section-heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+@mixin section-heading-secondary {
+  margin: 1rem 0 1.5rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: $color-heading-secondary;
+}
+
+@mixin main-btn {
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  background-color: $color-btns-icons-efects;
+  border: 0;
+  border-radius: 21px;
+  padding: 0.8rem 2.8rem;
+  cursor: pointer;
+}
+
+// CAROUSEL
+
+@mixin carousel {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@mixin carousel-slide {
+  flex: 1 0 100%;
+  transition: transform 1400ms;
+}
+
+@mixin carousel-pagination {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  z-index: 998;
+}
+
+@mixin carousel-label {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background: transparent;
+  margin: 0 2px;
+  border: solid 2px $color-btns-icons-efects;
+  cursor: pointer;
+}

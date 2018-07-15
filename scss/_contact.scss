@@ -1,0 +1,88 @@
+.contact {
+  @include section-paddings;
+  background-color: $color-less-white-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__heading {
+  @include section-heading;
+}
+
+.contact__heading-secondary {
+  @include section-heading-secondary;
+}
+
+.contact__form {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.contact__fieldset-name-email {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact__form-name,
+.contact__form-email {
+  flex: 1;
+}
+
+.contact__form-name {
+  @media screen and (min-width: 500px) {
+    margin-right: 1rem;
+  }
+}
+
+.contact__form-email {
+  @media screen and (min-width: 500px) {
+    margin-left: 1rem;
+  }
+}
+
+.contact__form-input {
+  border: none;
+  border-bottom: 2px solid rgba(164, 164, 164, 0.88);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: inherit;
+  font-family: $font-main;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  outline: none;
+  &::placeholder {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: $font-main;
+    font-weight: 600;
+    color: #9e9e9e;
+  }
+}
+
+.contact__fieldset-txtarea {
+  position: relative;
+}
+
+.contact__form-txtarea {
+  resize: none;
+  width: 100%;
+  &::placeholder {
+    line-height: 500%;
+  }
+}
+
+.contact__btn-wrapper {
+  text-align: center;
+}
+
+.contact__btn {
+  @include main-btn;
+}

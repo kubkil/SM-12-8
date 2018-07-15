@@ -1,0 +1,98 @@
+.prices {
+  @include section-paddings;
+  background-color: #EBEBEB;
+}
+
+.prices__heading {
+  @include section-heading;
+}
+
+.prices__heading-secondary {
+  @include section-heading-secondary;
+}
+
+.prices__wrapper {
+  @include section-width;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.prices__card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex: 1 1 auto;
+}
+
+.prices__card {
+  text-align: center;
+  background-color: #fff;
+  padding: 1.2rem 3.3rem;
+  margin: 0 0.5rem 1.5rem 0.5rem;
+}
+
+.prices__card-heading {
+  color: $color-less-black;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0.5rem 0;
+}
+
+.prices__card-price {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.prices__card-period {
+  display: block;
+  color: $color-heading-secondary;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+
+.prices__card-benefits {
+  font-size: 12px;
+  color: $color-para-non-white-background;
+  font-weight: 500;
+}
+
+.prices__card-benefit {
+  margin-bottom: 1rem;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 10px;
+    height: 1px;
+    background-color: $color-para-non-white-background;
+  }
+}
+
+.prices__card-horz {
+  margin: 0 auto;
+  width: 10px;
+  height: 1px;
+  border: 0;
+  background-color: $color-para-non-white-background;
+  margin-bottom: 0.5rem;
+}
+
+.prices__card-btn {
+  border-radius: 20px;
+  background-color: #373737;
+  text-transform: uppercase;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding:  0.7rem 2.1rem;
+  font-size: 14px;
+  margin-top: 1rem;
+  cursor: pointer;
+}

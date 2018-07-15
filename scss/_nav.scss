@@ -1,0 +1,129 @@
+.header {
+  background-color: #000;
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2% 0;
+  position: relative;
+  white-space: nowrap;
+  @include section-width;
+  @include respond-to(medium) {
+    padding: 0;
+  }
+}
+
+// HAMBURGER
+#menu-toggle {
+  display: none;
+  &:checked ~ .header__list {
+    // mixin respond-to uses min-width
+    @media screen and (max-width: 768px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 100%;
+      background-color: #000;
+    }
+  }
+  &:not(:checked) ~ .header__list {
+    // mixin respond-to uses min-width
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.header__toggle {
+  font-size: 32px;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+// END HAMBURGER
+
+.header__list {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.header__list,
+.header__hidden-list {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.286;
+  z-index: 999;
+}
+
+.header__link {
+  display: inline-block;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+}
+
+.header__item {
+  position: relative;
+  height: 100%;
+  z-index: 999;
+  @include respond-to(medium) {
+    border-bottom: 5px solid transparent;
+    padding: 1.5rem 0;
+    &:hover {
+      border-bottom-color: $color-btns-icons-efects;
+    }
+  }
+}
+
+.header__item--hidden {
+  border: none;
+}
+
+.header__item--large,
+.header__link--large {
+  display: none;
+  @include respond-to(large) {
+    display: inline-block;
+  }
+}
+
+// HEADER DROPDOWNS
+.header__toggle--about-us,
+.header__toggle--services {
+  display: none;
+  @include respond-to(medium) {
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+  }
+  @include respond-to(large) {
+    display: none;
+  }
+}
+
+#about-us-toggle,
+#services-toggle {
+  display: none;
+  &:checked ~ .header__hidden-list {
+    @include respond-to(medium) {
+      display: block;
+      position: absolute;
+      top: 100%;
+      background-color: #000;
+    }
+  }
+  &:not(:checked) ~ .header__hidden-list {
+    @include respond-to(medium) {
+      display: none;
+    }
+  }
+}
+// END HEADER DROPDOWNS
