@@ -30,6 +30,7 @@
   "devDependencies": {
     "autoprefixer": "^8.4.1",
     "babel-cli": "^6.26.0",
+    "babel-minify": "^0.4.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.4",
     "hoek": "^5.0.3",
