@@ -7,14 +7,14 @@
     "watch": "npm-run-all -p watch:*",
     "watch:sass": "node-sass -w --source-map true --output-style compressed scss/ -o css/",
     "watch:bs": "browser-sync start --server --files css/*.css *.html",
-    "autoprefix": "postcss css/style.css -u autoprefixer -o css/style.prefixed.css",
+    "autoprefix": "postcss css/style.css -u autoprefixer -o css/style-prefixed.min.css",
     "watch:autoprefix": "onchange \"css/style.css\" -d 50 -- npm run autoprefix",
     "watch:ngrok": "ngrok http 3000",
-    "watch:babel": "npx babel js/script.js --watch --out-file js-build/script-compiled.js --source-maps inline",
+    "watch:babel": "npx babel js/script.js --watch --out-file js-build/script-compiled.min.js --source-maps inline",
     "build": "npm-run-all -s build:*",
     "build:css": "node-sass --source-map true --output-style compressed scss/ -o css/",
-    "build:babel": "npx babel js/script.js --out-file js-build/script-compiled.js --source-maps inline",
-    "build:autoprefix": "postcss css/style.css -u autoprefixer -o css/style.prefixed.css"
+    "build:babel": "npx babel js/script.js --out-file js-build/script-compiled.min.js --source-maps inline",
+    "build:autoprefix": "postcss css/style.css -u autoprefixer -o css/style-prefixed.min.css"
   },
   "repository": {
     "type": "git",
