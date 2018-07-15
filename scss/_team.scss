@@ -1,9 +1,9 @@
 .team {
   padding: 3rem 1rem;
   position: relative;
-  background: url(/images/team/Bg_image-sml.jpg) center/cover no-repeat;
+  background: center/cover no-repeat url('/images/team/Bg_image-sml.jpg');
   @include respond-to(medium) {
-    background: url(/images/team/Bg_image.jpg) center/cover no-repeat;
+    background: center/cover no-repeat url('/images/team/Bg_image.jpg');
   }
 }
 
