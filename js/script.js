@@ -207,7 +207,7 @@ function initMap() {
     map: map,
     title: 'Awax',
     icon: {
-      url: '/SM-12-8/images/map/location-pin.svg',
+      url: 'images/map/location-pin.svg',
       scaledSize: new google.maps.Size(50, 50)
     }
   };
@@ -218,14 +218,39 @@ function initMap() {
     pixelOffset: new google.maps.Size(-270, 180),
     maxWidth: 400
   };
-  const infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 
+  const infoWindow = new google.maps.InfoWindow(infoWindowOptions);
   let isInfoOpened = false;
-  let markerListener;
+
+  // function checkIfOpened() {
+  //   if (isInfoOpened) {
+  //     infoWindow.close();
+  //     isInfoOpened = false;
+  //   } else {
+  //     infoWindow.open(map, marker);
+  //     isInfoOpened = true;
+  //   }
+  // }
+
+  // const screenWidth = window.matchMedia('all and (min-width: 896px)');
+
+  // const handleScreenWidthChange = function (mediaQuery) {
+  //   if (mediaQuery.matches) {
+  //     console.log(checkIfOpened);
+  //     marker.addEventListener('click', checkIfOpened);
+  //   } else {
+  //     marker.removeEventListener('click', checkIfOpened);
+  //   }
+  // }
+
+  // handleScreenWidthChange(screenWidth);
+  // screenWidth.addListener(handleScreenWidthChange);
+
+
 
   const handleScreenWidthChange = function (mediaQuery) {
     if (mediaQuery.matches) {
-      markerListener = marker.addListener('click', function openWidow() {
+      marker.addListener('click', function openWidow() {
         if (isInfoOpened) {
           infoWindow.close();
           isInfoOpened = false;
@@ -241,40 +266,5 @@ function initMap() {
 
   handleScreenWidthChange(screenWidth);
   screenWidth.addListener(handleScreenWidthChange);
-
-  // if (window.screen.width >= 896) {
-  //   markerListener = marker.addListener('click', function openWidow() {
-  //     if (isInfoOpened) {
-  //       isInfoOpened = false;
-  //       infoWindow.close();
-  //     } else {
-  //       isInfoOpened = true;
-  //       infoWindow.open(map, marker);
-  //     }
-  //   });
-  // } else {
-  //   google.maps.event.removeListener(markerListener);
-  // }
-
-  // const mediaQuery = window.matchMedia('(min-width: 896px)');
-
-  // function handleWidthChange(mediaQuery) {
-  //   let markerListener;
-  //   if (mediaQuery.matches) {
-  //     markerListener = marker.addListener('click', function openWidow() {
-  //       if (isInfoOpened) {
-  //         isInfoOpened = false;
-  //         infoWindow.close();
-  //       } else {
-  //         isInfoOpened = true;
-  //         infoWindow.open(map, marker);
-  //       }
-  //     });
-  //   } else {
-  //     google.maps.event.removeListener(markerListener);
-  //   }
-  // }
-
-  // mediaQuery.addListener(handleWidthChange);
 
 }
